@@ -42,6 +42,6 @@ jobs:
       - run: ng build --prod --no-progress
 
       # run pack
-      -ru: yarn run packagr
+      - run: yarn run packagr
 
 
