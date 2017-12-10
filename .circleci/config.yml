@@ -6,6 +6,7 @@ version: 2
 
 dependencies:
   pre:
+    - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
     - npm install angular-cli@latest -g
 
 jobs:
@@ -39,9 +40,10 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run build
-      - run: yarn ng --build --prod --no-progress
+      - run: yarn ng -- build --prod --no-progress
 
       # run pack
       - run: yarn run packagr
+
 
 
