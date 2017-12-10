@@ -40,7 +40,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run build
-      - run: yarn ng -- build --prod --no-progress
+      - run: yarn ng -- build --prod --aot --no-progress
 
       # run pack
       - run: yarn run packagr
